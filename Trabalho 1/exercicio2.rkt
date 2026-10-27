@@ -15,7 +15,6 @@
 
 
 ;; testes
-
 (check-equal? (natal_desconto 100 90 20) 80) ;; o preço com desconto (80) é menor que o da concorrente (90), então retorna 80
 (check-equal? (natal_desconto 100 75 20) 75) ;; o preço com desconto (80) é maior que o da concorrente (75), então retorna 75
 (check-equal? (natal_desconto 100 80 20) 80) ;; o preço com desconto (80) é igual ao da concorrente (80), então retorna 80

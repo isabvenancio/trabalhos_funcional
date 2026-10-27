@@ -12,7 +12,6 @@
 
 
 ;; testes
-
 (check-equal? (arredonda 3.14159265359 1) 3.1)
 (check-equal? (arredonda 3.14159265359 2) 3.14)
 (check-equal? (arredonda 3.14159265359 3) 3.142)
