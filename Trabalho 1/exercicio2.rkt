@@ -4,9 +4,7 @@
 ;; função natal_desconto
 ;; calcula o preco de venda de um jogo na promoção de natal, sendo q o preco final não pode ser mais caro que o da loja concorrente
 ;; calculamos o preço com desconto multiplicando o preço original por (1 - desconto/100). Ex: 20% de desconto é (1 - 20/100) = 0.80
-;; função if verifica se o preço calculado é MAIOR que o preço da loja concorrente
-;; Se for maior, a função retorna o preço do concorrente
-;; Se for menor ou igual, retorna o preço com o desconto aplicado
+;; função if verifica se o preço calculado é MAIOR que o preço da loja concorrente. Se for maior, a função retorna o preço do concorrente. Se for menor ou igual, retorna o preço com o desconto aplicado
 
 (define (natal_desconto preco-original preco-concorrente desconto)
     (if (> (* preco-original (- 1 (/ desconto 100))) preco-concorrente) ;; dado um percentual de desconto, se o preco original com desconto for maior que o da concorrente, retorna o preco da concorrente
