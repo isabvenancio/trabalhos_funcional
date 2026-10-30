@@ -58,7 +58,7 @@
         [else (cons (first contagens-ordenadas)(inserir-ordenado c (rest contagens-ordenadas)))] ;;caso contário, avança na lista
     )
 )
- 
+
 ;;funcao que ordena a lista de contagens usando inserir-ordenado.
 ;; (listof Contagem) -> (listof Contagem)
 (define (ordenar-contagens contagens)
@@ -99,7 +99,7 @@
 ;;por n linhas, onde cada linha contem uma palavra e sua contagem de aparicao na
 ;;string de entrada.
 ; (string-split text) separa o texto em uma lista de palavras.
-; (contar-palavras) conta quantas vezes cada palavra aparece.
+; (gerar-contagens) conta quantas vezes cada palavra aparece.
 ; (ordenar-contagens) organiza as contagens pela maior quantidade e, em caso de empate, pela ordem alfabética.
 ; (primeiros-n ... n) seleciona as N primeiras contagens.
 ; (formatar-saida) transforma tudo em uma string, com cada palavra e sua quantidade em uma linha.
@@ -178,4 +178,9 @@
 ;;conta-palavras
 (conta-palavras "casa bola casa gato bola casa" 2)
 
+;TESTA APENAS UM
 ;racket base.rkt -i textos/blake-poems.txt -o arquivo_de_saida.txt -n 5
+
+;TESTA E COMPARA
+;racket base.rkt -i textos/austen-emma.txt -o arquivo_de_saida.txt -n 50000
+;fc.exe arquivo_de_saida.txt outputs\austen-emma.txt
