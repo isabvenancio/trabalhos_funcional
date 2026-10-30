@@ -21,7 +21,7 @@
 (define (incrementar-palavra palavra contagens)
     (cond
         [(empty? contagens) (list (contagem palavra 1))] ;;Se a lista estiver vazia, significa que a palavra ainda não existe. Então, cria uma nova contagem com quantidade 1
-        [(equal? palavra (contagem-palavra (first contagens))) ;;se a palavra for encontrada, cria uma nova estrutura com a quant incrementada em 1 e manter o restante da lista
+        [(string=? palavra (contagem-palavra (first contagens))) ;;se a palavra for encontrada, cria uma nova estrutura com a quant incrementada em 1 e manter o restante da lista
             (cons (contagem palavra (add1 (contagem-quantidade (first contagens))))(rest contagens))]
         [else (cons (first contagens)(incrementar-palavra palavra (rest contagens)))] ;;se nao for a palavra atual, mantem o primeiro elemento e continua procurando o restante da lista
     )
