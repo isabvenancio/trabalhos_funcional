@@ -77,7 +77,7 @@
         [else (cons (first contagens)(primeiros-n (rest contagens)(sub1 n)))]; caso contrário, mantém o primeiro elemento com cons e chama a função novamente com o restante da lista, diminuindo n em 1
     )
 )
- 
+
 ;;funcao que transforma uma contagem em uma linha da saida.
 ;;Ex.: (contagem "casa" 3) -> "casa 3\n"
 ;;format monta uma string indicando onde cada informação deve entrar.
