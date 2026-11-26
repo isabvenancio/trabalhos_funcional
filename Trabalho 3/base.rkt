@@ -175,7 +175,7 @@
 (check-equal? (primeiros-n (list (contagem "a" 2)) 5) (list (contagem "a" 2)))
 
 ;;conta-palavras
-(conta-palavras "casa bola casa gato bola casa" 2)
+(check-equal? (conta-palavras "casa bola casa gato bola casa" 2) "casa 3\nbola 2\n")
 
 ;TESTA APENAS UM
 ;racket base.rkt -i textos/blake-poems.txt -o arquivo_de_saida.txt -n 5
