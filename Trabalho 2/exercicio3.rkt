@@ -1,24 +1,26 @@
 #lang racket
 (require rackunit)
 
-;funcao scan
+;funcao scan - alta ordem
+; (Y X -> Y) Y Lista(X) -> Lista(Y)
 ;devolve uma lista S em q o i-ésimo elemento é f aplicada a ini e aos elementos das posições até i de lst, acumulando da esquerda para a direita
 ; S1 = (f ini x1), S2 = (f S1 x2), S3 = (f S2 x3)
 ; cada resultado parcial ("novo") é calculado uma única vez e passado como o novo valor inicial da chamada recursiva. Assim, em 
-; (scan + 2 (list 9 3 1 7)) a soma 2 + 9 acontece só uma vez, e as somas seguintes partem de 11, 14 e 15. Ao todo são feitas n aplicações de f para uma lista de n elementos.
+; (scan + 2 (list 9 3 1 7)) a soma 2 + 9 acontece só uma vez, e as somas seguintes partem de 11, 14 e 15
+; ao todo são feitas n aplicações de f para uma lista de n elementos
 (define (scan f ini lst)
     (cond
         [(empty? lst) empty]
         [else
-            (define novo (f ini (first lst)))
-            (cons novo (scan f novo (rest lst)))]
+            (define parcial (f ini (first lst)))
+                (cons parcial (scan f parcial (rest lst)))]
     )
 )
 
 ;testes
-(check-equal? (scan + 0 (list)) '())
-(check-equal? (scan * 1 (list)) '())
-(check-equal? (scan + 10 (list)) '())
+(check-equal? (scan + 0 (list)) empty)
+(check-equal? (scan * 1 (list)) empty)
+(check-equal? (scan + 10 (list)) empty)
 (check-equal? (scan + 0 (list 5)) '(5))
 (check-equal? (scan + 2 (list 9)) '(11))
 (check-equal? (scan + 2 (list 9 3 1 7)) '(11 14 15 22))
